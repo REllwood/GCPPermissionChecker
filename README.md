@@ -1,14 +1,16 @@
 
 # Check User Permissions in Google Cloud Platform
 
-This Cloud Function takes in a user's email address and checks their permissions in Google Cloud Platform, then returns a list of those permissions and saves them in a BigQuery table for later viewing.
+This Cloud Function takes in a user's Email Address, Project ID and type of account and checks their permissions in Google Cloud Platform, then returns a list of those permissions and saves them in a BigQuery table for later viewing.
 
 
 ## Usage/Examples
 
 To use the function, make a GET request to the cloud functions endpoint with the following parameters:
 
-**email:** The email address of the user whose permissions you want to check
+**email:** The email address of the user whose permissions you want to check <br><br>
+**project:** The project ID you would like to check the user's permission against<br><br> 
+**type:** This is the type of user to check, if it's a service account you want to set the type to 'serviceAccount' or if it's a user the value should be 'user'
 
 The request object should have the following format:
 
@@ -16,7 +18,8 @@ The request object should have the following format:
 {
     "args": {
         "email": "test@company.com",
-        "resource": "projects/[PROJECT_ID]"
+        "project: "test-project",
+        "type": "user"
     }
 }
 
