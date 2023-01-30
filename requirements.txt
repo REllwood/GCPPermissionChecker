@@ -1,4 +1,2 @@
-google-auth
-google-auth-iam
-google-auth-httplib2
-google-api-python-client
+google-cloud-iam
+google-cloud-bigquery
